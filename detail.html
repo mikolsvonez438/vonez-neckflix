@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#070709" />
+    <meta name="description" content="Title details on Neckflix." />
+    <title>Watch — Neckflix</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body data-page="detail">
+    <a class="skip-link" href="#detailMain">Skip to content</a>
+
+    <header class="site-header detail-header" id="siteHeader">
+      <a class="brand" href="index.html" aria-label="Neckflix home">
+        <span class="brand-mark">N</span>
+        <span class="brand-word">NECKFLIX</span>
+      </a>
+      <a class="button button-secondary button-compact" href="index.html">← Back to browse</a>
+    </header>
+
+    <main id="detailMain">
+      <section class="detail-hero" id="detailHero" aria-labelledby="titleText">
+        <div class="detail-backdrop" id="detailBackdrop"></div>
+        <div class="detail-shade"></div>
+        <div class="detail-content content-shell">
+          <div class="detail-copy">
+            <div class="detail-badges" id="detailBadges">
+              <span class="pill pill-movie">Featured</span>
+            </div>
+            <h1 id="titleText">Loading title…</h1>
+            <div class="detail-meta" id="metaText"></div>
+            <div class="detail-rating" id="ratingText"></div>
+            <p class="detail-description" id="overviewText"></p>
+            <p class="detail-cast" id="castText"></p>
+            <div class="detail-actions">
+              <button class="button button-primary" id="playBtn" type="button">▶ Play now</button>
+              <button class="button button-secondary" id="trailerBtn" type="button">＋ Show episodes</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="watch-section content-shell hidden" id="watchSection" aria-labelledby="watchTitle">
+        <div class="section-header watch-header">
+          <div>
+            <p class="section-kicker">Now watching</p>
+            <h2 id="watchTitle">Player</h2>
+          </div>
+          <button class="button button-secondary button-compact" id="closePlayerBtn" type="button">Close player</button>
+        </div>
+        <div class="player-container">
+          <iframe
+            id="playerFrame"
+            title="Video player"
+            allowfullscreen
+            allow="autoplay; encrypted-media; picture-in-picture"
+            referrerpolicy="strict-origin-when-cross-origin"
+          ></iframe>
+        </div>
+      </section>
+
+      <section class="detail-info content-shell" aria-label="Title information">
+        <div class="facts-card">
+          <p class="section-kicker">At a glance</p>
+          <div class="facts-grid" id="factsGrid">
+            <div><span>Release</span><strong>—</strong></div>
+            <div><span>Runtime</span><strong>—</strong></div>
+            <div><span>Status</span><strong>—</strong></div>
+            <div><span>Language</span><strong>—</strong></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="detail-episodes content-shell hidden" id="detailEpisodes" aria-labelledby="detailEpisodesTitle">
+        <div class="section-header">
+          <div>
+            <p class="section-kicker">Keep watching</p>
+            <h2 id="detailEpisodesTitle">Episodes</h2>
+          </div>
+          <label class="season-select-label">Season <select id="detailSeasonSelect"></select></label>
+        </div>
+        <div class="detail-episode-list" id="detailEpisodeList"></div>
+      </section>
+
+      <section class="recommendations content-shell" aria-labelledby="recommendationsTitle">
+        <div class="section-header">
+          <div>
+            <p class="section-kicker">Because you watched this</p>
+            <h2 id="recommendationsTitle">More like this</h2>
+          </div>
+        </div>
+        <div class="home-row detail-row" id="recommendationsRow"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer content-shell">
+      <a class="brand brand-footer" href="index.html"><span class="brand-mark">N</span><span class="brand-word">NECKFLIX</span></a>
+      <p>Movie data and artwork provided by TMDB. Use playback sources you are authorized to access.</p>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>

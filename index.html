@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#070709" />
+    <meta
+      name="description"
+      content="Discover movies, series, and Korean dramas with Neckflix."
+    />
+    <title>Neckflix — Find your next story</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body data-page="home">
+    <a class="skip-link" href="#mainContent">Skip to content</a>
+
+    <header class="site-header" id="siteHeader">
+      <a class="brand" href="index.html" aria-label="Neckflix home">
+        <span class="brand-mark">N</span>
+        <span class="brand-word">NECKFLIX</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <button class="nav-link active" type="button" data-filter="home">Home</button>
+        <button class="nav-link" type="button" data-filter="movie">Movies</button>
+        <button class="nav-link" type="button" data-filter="tv">TV Series</button>
+        <button class="nav-link" type="button" data-filter="korean">K-Dramas</button>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-button mobile-search-toggle" id="mobileSearchToggle" type="button" aria-label="Open search">⌕</button>
+        <div class="profile" aria-label="Profile">
+          <div class="avatar">N</div>
+          <span class="profile-label">Viewer</span>
+        </div>
+      </div>
+    </header>
+
+    <main id="mainContent">
+      <section class="spotlight" id="spotlight" aria-labelledby="spotlightTitle">
+        <div class="spotlight-backdrop" id="spotlightBackdrop"></div>
+        <div class="spotlight-shade"></div>
+        <div class="spotlight-content content-shell">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> #1 in movies today</p>
+          <h1 id="spotlightTitle">Stories worth staying up for.</h1>
+          <p class="spotlight-description" id="spotlightDescription">
+            Search thousands of movies and series, explore what is trending, and find your next obsession.
+          </p>
+          <div class="spotlight-meta" id="spotlightMeta">
+            <span class="match">98% Match</span>
+            <span>New releases</span>
+            <span class="quality-badge">HD</span>
+          </div>
+          <div class="spotlight-actions">
+            <button class="button button-primary" id="spotlightPlay" type="button">▶ View details</button>
+            <button class="button button-secondary" id="spotlightMore" type="button">＋ More info</button>
+          </div>
+        </div>
+        <div class="spotlight-index" id="spotlightIndex">01 / 05</div>
+      </section>
+
+      <section class="search-stage content-shell" aria-labelledby="discoverTitle">
+        <div class="search-copy">
+          <p class="section-kicker">Your next favorite is here</p>
+          <h2 id="discoverTitle">What do you want to watch?</h2>
+        </div>
+        <form class="search-bar" id="searchForm" role="search">
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <label class="sr-only" for="searchInput">Search movies and TV series</label>
+          <input
+            type="search"
+            id="searchInput"
+            placeholder="Search movies, TV series, or K-dramas"
+            autocomplete="off"
+            enterkeyhint="search"
+          />
+          <button type="submit">Search</button>
+        </form>
+        <div class="quick-filters" aria-label="Quick filters">
+          <button type="button" class="filter-chip active" data-quick-filter="trending">Trending</button>
+          <button type="button" class="filter-chip" data-quick-filter="top_rated">Top rated</button>
+          <button type="button" class="filter-chip" data-quick-filter="upcoming">Coming soon</button>
+        </div>
+      </section>
+
+      <section class="catalog content-shell" aria-live="polite" aria-busy="true">
+        <div class="section-header">
+          <div>
+            <p class="section-kicker" id="catalogKicker">Curated for you</p>
+            <h2 id="catalogTitle">Explore Neckflix</h2>
+          </div>
+          <p class="results-info" id="resultsInfo">Loading the latest titles…</p>
+        </div>
+
+        <div id="loadingState" class="skeleton-grid" aria-hidden="true"></div>
+        <div id="resultsGrid"></div>
+      </section>
+
+      <section id="tvControlsSection" class="episode-panel content-shell hidden" aria-labelledby="tvTitle">
+        <div class="episode-panel-inner">
+          <div class="episode-panel-header">
+            <div>
+              <p class="section-kicker">Episode guide</p>
+              <h2 id="tvTitle">Select an episode</h2>
+              <p id="tvMeta" class="muted"></p>
+            </div>
+            <button class="icon-button" id="closeEpisodesBtn" type="button" aria-label="Close episode guide">×</button>
+          </div>
+
+          <div class="season-control">
+            <label for="seasonSelect">Season</label>
+            <select id="seasonSelect"></select>
+          </div>
+          <div id="episodesGrid" class="episodes-grid"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer content-shell">
+      <a class="brand brand-footer" href="index.html"><span class="brand-mark">N</span><span class="brand-word">NECKFLIX</span></a>
+      <p>Movie data and artwork provided by TMDB. Use playback sources you are authorized to access.</p>
+      <p class="footer-note">Find the story. Press play.</p>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
